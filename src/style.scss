@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+
+body {
+  font-family: 'Jura', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #292929;
+  color: white;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+}
+
+.wrapper {
+  height: 100vh;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 12px;
+  border-image: url('./img/border4.svg') 12 repeat repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game, .game {
+  flex: 1;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  /* background-image: url('./img/off.png'); */
+  transition: background-image 0.2s ease-in;
+  background-size: 64px;
+}
+
+.switch {
+  /* background-image: url('./img/switch.png'); */
+  width: 64px;
+  height: 64px;
+  background-size: 32px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-image:hover, .switch-highlight {
+  box-shadow: 0 0 10px #fff;
+  background-color: #69696980;
+}
+
+.switch-image {
+  cursor: pointer;
+  animation: spin 16s linear infinite;
+  width: 50%;
+  margin: 8px;
+  padding: 2px;
+  display: block;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.buttons {
+  /* /position: fixed; */
+  margin: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.inner {
+  background: none;
+  outline: none;
+  border-style: solid;
+  border-width: 16px;
+  border-image: url('./img/border2.png') 16 repeat repeat;
+
+  margin: -8px;
+  cursor: pointer;
+}
+
+.inner:hover {
+  border-image: url('./img/border3.png') 16 repeat repeat;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  /* width: 120px; */
+  border-style: solid;
+  border-width: 16px;
+  border-image: url('./img/border1.png') 16 repeat repeat;
+}
+
+.button+.button {
+  margin-left: 8px;
+}
+
+.text {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  background-color: #500201;
+  padding: 0 4px;
+
+  color: #ffd600;
+  font-family: 'Jura', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black;
+}
+
+.inner:hover .text {
+  background-color: #7f0b0b;
+}
+
+nav {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  color: white;
+  height: 52px;
+  /* margin: 27px; */
+}
+
+.links {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav a {
+  padding-top: 8px;
+  font-size: 1.2em;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in;
+  color: #ffd600;
+}
+
+nav a:hover {
+  color: white;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#tip {
+  position: absolute;
+  text-align: center;
+  top: -80px;
+  right: -16px;
+  pointer-events: none;
+  padding: 8px;
+  width: 90px;
+  /* background: url('/img/tooltip.png') round round; */
+ 
+  border-style: solid;
+  border-width: 6px;
+  border-image: url('img/tooltip.png') 6 round round;
+  background-color: #010721CC;
+
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+
+#tip::after {
+  display:block;
+  position: absolute;
+  bottom: -24px;
+  right: 5px;
+  width: 42px;
+  height: 21px;
+  content: '';
+  background-image: url('./img/tip.png');
+}
+
+#tutorial-wrapper {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: none;
+  background-color: #292929DD;
+  overflow-y: auto;
+  max-height: 100%;
+  padding-bottom: 32px;
+}
+
+.tutorial {
+  width: 600px;
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.tut-display {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+#tutorial-close {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  width: 1.1em;
+  height: 1.1em;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid white;
+  border-radius: 0.5em;
+  padding: 4px;
+  cursor: pointer;
+}
+
+#tutorial-close:hover {
+  background-color: #e43838a2;
+}
