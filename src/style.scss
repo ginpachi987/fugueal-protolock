@@ -27,13 +27,30 @@ body {
   align-items: center;
 }
 
-#game, .game {
+#game-wrapper {
   flex: 1;
-  /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#game, .game {
+  
+  /* border: 1px solid white; */
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 300px;
+  gap: 6px;
+
+  div {
+    height: 100px;
+    cursor: pointer;
+  }
 }
 
 .row {
@@ -45,7 +62,8 @@ body {
   width: 64px;
   height: 64px;
   /* background-image: url('./img/off.png'); */
-  transition: background-image 0.2s ease-in;
+  transition: all 0.5s ease-in;
+  opacity: 0;
   background-size: 64px;
 }
 

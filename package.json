@@ -1,7 +1,7 @@
 {
   "name": "fugueal-protolock",
   "private": true,
-  "version": "0.5.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,6 +13,7 @@
     "vite": "^2.9.2"
   },
   "dependencies": {
-    "p5": "^1.4.1"
+    "p5": "^1.4.1",
+    "p5js-wrapper": "^1.2.3"
   }
 }
