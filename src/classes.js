@@ -9,6 +9,7 @@ export class Field {
     this.rows = rows
     this.cols = cols
     this.cells = [...Array(this.cols * this.rows)].map(() => new Cell())
+    console.log(this.cells)
 
     this.cells.forEach((cell, i) => {
       cell.el.addEventListener('mouseenter', () => {
@@ -97,6 +98,7 @@ export class Field {
 
   setCells(cells) {
     cells.forEach((cell, i) => {
+      // console.log(cell, this.cells[i])
       this.cells[i].setParams(cell)
       this.cells[i].canvas.redraw()
     })
@@ -122,12 +124,12 @@ export class Field {
 
       //console.log(rowParam, allParams)
       for (let j = 0; j < this.cols; j++) {
-        initCells.push([
-          rowParam[0] || allParams[0].splice(Math.floor(Math.random() * allParams[0].length), 1)[0],
-          rowParam[1] || allParams[1].splice(Math.floor(Math.random() * allParams[1].length), 1)[0],
-          rowParam[2] || allParams[2].splice(Math.floor(Math.random() * allParams[2].length), 1)[0],
-          rowParam[3] || allParams[3].splice(Math.floor(Math.random() * allParams[3].length), 1)[0]
-        ])
+        initCells.push({
+          figure: rowParam[0] || allParams[0].splice(Math.floor(Math.random() * allParams[0].length), 1)[0],
+          border: rowParam[1] || allParams[1].splice(Math.floor(Math.random() * allParams[1].length), 1)[0],
+          inner: rowParam[2] || allParams[2].splice(Math.floor(Math.random() * allParams[2].length), 1)[0],
+          amount: rowParam[3] || allParams[3].splice(Math.floor(Math.random() * allParams[3].length), 1)[0]
+        })
       }
     }
 
@@ -196,10 +198,10 @@ export class Cell {
   }
 
   setParams(params) {
-    this.border = params[0]
-    this.figure = params[1]
-    this.inner = params[2]
-    this.amount = params[3]
+    this.border = params.border
+    this.figure = params.figure
+    this.inner = params.inner
+    this.amount = params.amount
   }
 
   setOpacity(opacity) {

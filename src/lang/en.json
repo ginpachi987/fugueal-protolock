@@ -1,0 +1,13 @@
+{
+  "newGame": "New Game",
+  "reset": "Reset",
+  "tip": "How to play",
+  "title": "Cantaric Protolock",
+  "tutorial": [
+    "The goal of this game is to \"turn off\" all squares by inverting either vertical or horizontal lines.",
+    "Off",
+    "On",
+    "Example",
+    "Here is a simple example of a game in 4 by 4 grid. The best tactic is to select row or column with the most cells with \"on\" state in it. To win in this particular example you need to click on 2nd row, 3rd row and 4th column in any desired order.<br/>"
+  ]
+}

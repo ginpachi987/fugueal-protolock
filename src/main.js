@@ -151,11 +151,22 @@ function showTutorial() {
 
   let div = document.createElement('div')
   div.classList.add('game')
-  div.style.pointerEvents = 'none'
+  // div.style.pointerEvents = 'none'
   let tutorialField1 = new Field(div, 3, 1)
-  tutorialField1.setCells()
-  tutorialField1.flicker(1,0)
+  let cells = [
+    { figure: 1, border: 1, inner: 1, amount: 1 },
+    { figure: 2, border: 1, inner: 1, amount: 1 },
+    { figure: 3, border: 1, inner: 1, amount: 1 }
+  ]
+  tutorialField1.setCells(cells)
+  tutorialField1.resize(300)
+  tutorialField1.cells.forEach(cell => {
+    cell.canvas.redraw()
+  })
+  tutorialField1.flicker(1, 0)
   tutorial.appendChild(div)
+
+  console.log(tutorialField1)
 
   h2 = document.createElement('h2')
   h2.innerHTML = `${lang.tutorial[3] || en.tutorial[3]} 2`
