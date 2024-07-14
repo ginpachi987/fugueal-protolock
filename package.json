@@ -8,12 +8,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/p5": "^1.4.2",
-    "sass": "^1.50.1",
-    "vite": "^2.9.2"
+    "@types/p5": "^1.7.6",
+    "sass": "^1.77.8",
+    "vite": "^5.3.3"
   },
   "dependencies": {
-    "p5": "^1.4.1",
+    "p5": "^1.9.4",
     "p5js-wrapper": "^1.2.3"
   }
 }
