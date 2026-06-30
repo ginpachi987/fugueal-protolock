@@ -1,6 +1,6 @@
 /// <reference types="../node_modules/@types/p5/global"/>
 
-import * as p5 from '../node_modules/p5/lib/p5'
+import p5 from 'p5'
 
 export class Field {
   constructor(container, cols, rows = cols) {
@@ -171,7 +171,7 @@ export class Cell {
     this.selected = false
     this.hide = false
     this.size = 100
-    this.canvas = new window.p5(cellp5(this), this.el)
+    this.canvas = new p5(cellp5(this), this.el)
 
     this.border = border
     this.figure = figure

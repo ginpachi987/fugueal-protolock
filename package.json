@@ -1,16 +1,16 @@
 {
   "name": "fugueal-protolock",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@types/p5": "^1.7.6",
-    "sass": "^1.86.3",
-    "vite": "^6.2.6"
+    "sass": "^1.101.0",
+    "vite": "^8.1.0"
   },
   "dependencies": {
     "p5": "^1.11.3",
